@@ -72,7 +72,7 @@ WHERE total_secs > 86400 OR total_secs < 0;
 SELECT COUNT(*) AS duplicate_user_days FROM (
   SELECT msno, log_date
   FROM user_logs
-  GROUP BY msno, lo_date
+  GROUP BY msno, log_date
   HAVING COUNT(*) > 1
 ) d;
 
